@@ -6,7 +6,7 @@ const analyzeTicket = async (ticket) => {
       model: "gemini-1.5-flash-8b",
       apiKey: process.env.GEMINI_API_KEY,
     }),
-    name: "AI Ticket Triage Assistant",
+    name: "AI Ticket Assistant",
     system: `You are an expert AI assistant that processes technical support tickets. 
 
 Your job is to:
@@ -57,7 +57,7 @@ Ticket information:
     return JSON.parse(jsonString);
   } catch (e) {
     console.log("Failed to parse JSON from AI response" + e.message);
-    return null; // watch out for this
+    return null; 
   }
 };
 
